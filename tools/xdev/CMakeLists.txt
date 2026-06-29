@@ -1,12 +1,37 @@
 cmake_minimum_required(VERSION 3.20)
 
-project(xdev VERSION 0.1.0)
+project(xdev VERSION 0.1.0 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
 
 add_executable(xdev
     src/main.cpp
+    src/version.cpp
+
+    src/core/command_dispatcher.cpp
+
+    src/commands/help.cpp
+    src/commands/doctor.cpp
+    src/commands/build.cpp
+    src/commands/run.cpp
+    src/commands/setup.cpp
+
+    src/utils/terminal.cpp
 )
 
-target_include_directories(xdev PRIVATE include)
+target_include_directories(xdev
+    PRIVATE
+        ${PROJECT_SOURCE_DIR}/include
+)
+
+if(MSVC)
+    target_compile_options(xdev PRIVATE /W4)
+else()
+    target_compile_options(xdev PRIVATE
+        -Wall
+        -Wextra
+        -Wpedantic
+    )
+endif()

@@ -1,28 +1,28 @@
 {
-    "configurations": [
-        {
-            "name": "GCC Strict (Cross-Platform)",
-            "includePath": [
-                "${workspaceFolder}/**"
-            ],
-            "defines": [
-                "_DEBUG",
-                "UNICODE",
-                "_UNICODE",
-                "__GNUC__"
-            ],
-            "compilerPath": "",
-            "cStandard": "c11",
-            "cppStandard": "c++17",
-            "intelliSenseMode": "gcc-x64",
-            "compilerArgs": [
-                "-Wall",
-                "-Wextra",
-                "-pedantic",
-                "-Wno-unused-parameter",
-                "-Wshadow"
-            ]
-        }
-    ],
-    "version": 4
+  "configurations": [
+    {
+      "name": "windows-gcc-x64",
+      "includePath": [
+        "${workspaceFolder}/**"
+      ],
+      "defines": [
+        "_DEBUG",
+        "UNICODE",
+        "_UNICODE",
+        "__GNUC__"
+      ],
+      "compilerPath": "C:/msys64/ucrt64/bin/gcc.exe",
+      "cStandard": "${default}",
+      "cppStandard": "${default}",
+      "intelliSenseMode": "windows-gcc-x64",
+      "compilerArgs": [
+        "-Wall",
+        "-Wextra",
+        "-pedantic",
+        "-Wno-unused-parameter",
+        "-Wshadow"
+      ]
+    }
+  ],
+  "version": 4
 }
